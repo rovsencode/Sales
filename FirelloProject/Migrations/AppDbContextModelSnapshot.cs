@@ -645,7 +645,7 @@ namespace FirelloProject.Migrations
                         .IsRequired();
 
                     b.HasOne("FirelloProject.Models.Sales", "Sales")
-                        .WithMany()
+                        .WithMany("SalesProducts")
                         .HasForeignKey("SalesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -739,6 +739,11 @@ namespace FirelloProject.Migrations
                 {
                     b.Navigation("ProductImages");
 
+                    b.Navigation("SalesProducts");
+                });
+
+            modelBuilder.Entity("FirelloProject.Models.Sales", b =>
+                {
                     b.Navigation("SalesProducts");
                 });
 #pragma warning restore 612, 618
