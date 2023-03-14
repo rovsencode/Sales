@@ -1,0 +1,23 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<div class="card" style="width: 18rem;">
+
+    <img src="~/img/@Model.ProductImages.FirstOrDefault().ImageUrl" width="100" height="100" />
+    
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Price: @Model.Price</li>
+        <li class="list-group-item">Category Name: @Model.Category.Name</li>
+    </ul>
+</div>
+
+
+
+
+

@@ -1,0 +1,36 @@
+﻿@using FirelloProject.Models.demo
+@model List<Book>
+
+<div class="container">
+
+    @foreach (var book in Model)
+    {
+        <p>BookName=>@book.Name</p>
+
+        @foreach (var image in book.BookImages)
+        {
+            <span> Image:@image.ImageUrl</span>
+
+        }
+        @foreach (var bookGenre in book.BookGenres)
+        {
+            <p>@bookGenre.Genre.Name</p>
+        }
+
+        @foreach (var bookAuthor in book.BookAuthors)
+        {
+            <p>@bookAuthor.Author.Name</p>
+            <p>@bookAuthor.Author.SocialPage.Facebook</p>
+            <p>@bookAuthor.Author.SocialPage.Instagram</p>
+        }
+
+
+
+        <hr />
+    }
+
+
+
+</div>
+
+
